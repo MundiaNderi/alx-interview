@@ -9,7 +9,7 @@ def rotate_2d_matrix(matrix):
     """
     Don't return anything.
     Matrix must be edited in place.
-    Assume matrix will have 2 dimensions and will 
+    Assume matrix will have 2 dimensions and will
     not be empty
     """
 
