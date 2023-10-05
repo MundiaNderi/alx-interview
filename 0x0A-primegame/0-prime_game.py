@@ -30,19 +30,16 @@ def isWinner(x, nums):
             i += 6
         return True
 
-    def play_round(n):
-        primes = [True] * (n + 1)
-        primes[0] = primes[1] = False
-
-        p = 2
-        while p * p <= n:
-            if primes[p]:
-                for i in range(p * p, n + 1, p):
-                    primes[i] = False
-            p += 1
-
-        num_of_primes = sum(1 for prime in primes if prime)
-        return "Maria" if num_of_primes % 2 == 0 else "Ben"
+    def play_round(win):
+        maria_turn = True
+        while num > 0:
+            if is_prime(num):
+                return "Maria" if maria_turn else "Ben"
+            for i in range(num, 0, -1):
+                if is_prime(i):
+                    num -= i
+                    maria_turn = not maria_turn
+                    break
 
     maria_wins = 0
     ben_wins = 0
